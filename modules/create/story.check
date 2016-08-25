@@ -1,11 +1,11 @@
-directory-create-ok
+done
 
 generator: <<CODE
 !bash
 owner=$(config owner)
 
 if test "${owner}"; then
-  echo owner:$(config owner): 
+  echo 'owner: <'$(config owner)'>' 
 fi
 
 CODE

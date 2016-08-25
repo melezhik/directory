@@ -18,10 +18,16 @@ if test "${mode}"; then
   chmod $mode $path || exit 1
 fi
 
-stat -c owner:%U: $path
+echo -n 'directory path: '
+stat -c %n -- $path
 
+echo -n 'directory owner: '
+stat -c '<'%U'>' -- $path
 
-echo directory-create-ok
+echo -n 'directory access rights: '
+stat -c %A -- $path
+
+echo done
 
 
 
