@@ -1,5 +1,6 @@
 path=$(config path)
 owner=$(config owner)
+group=$(config group)
 mode=$(config mode)
 recursive=$(config recursive)
 
@@ -11,7 +12,11 @@ else
 fi
 
 if test "${owner}"; then
-  chown $owner $path || exit 1
+  chown $owner -R $path || exit 1
+fi
+
+if test "${group}"; then
+  chgrp $owner -R $path || exit 1
 fi
 
 if test "${mode}"; then
@@ -23,6 +28,9 @@ stat -c %n -- $path
 
 echo -n 'directory owner: '
 stat -c '<'%U'>' -- $path
+
+echo -n 'directory group: '
+stat -c '<'%G'>' -- $path
 
 echo -n 'directory access rights: '
 stat -c %A -- $path

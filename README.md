@@ -15,11 +15,6 @@ Manages directories
     $ cat sparrowfile
 
 
-    use v6;
-
-    use Sparrowdo;
-
-
     task_run %(
 
       task => 'create this directory',
@@ -29,7 +24,8 @@ Manages directories
         path => '/opts/perl'
         recursive => 1,
         mode => '755',
-        owner => 'sparrow'
+        owner => 'sparrow',
+        group => 'sparrow'
       )
 
     );
@@ -52,6 +48,10 @@ Recursively creates a directory if parent directories not exist. Default value i
 ## owner
 
 Sets the owner of the directory created
+
+## owner
+
+Sets a group a directory created will belong to
 
 ## mode
 
