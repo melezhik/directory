@@ -49,7 +49,7 @@ Recursively creates a directory if parent directories not exist. Default value i
 
 Sets the owner of the directory created
 
-## owner
+## group
 
 Sets a group a directory created will belong to
 
