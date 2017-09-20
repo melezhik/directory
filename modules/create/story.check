@@ -1,14 +1,20 @@
 generator: <<CODE
+
 !bash
+
 owner=$(config owner)
 group=$(config group)
 
-if test "${owner}"; then
-  echo 'owner: <'$(config owner)'>' 
-fi
+if ! test $os == "minoca"; then
 
-if test "${group}"; then
-  echo 'group: <'$(config group)'>' 
+  if test "${owner}"; then
+    echo 'owner: <'$(config owner)'>' 
+  fi
+  
+  if test "${group}"; then
+    echo 'group: <'$(config group)'>' 
+  fi
+  
 fi
 
 CODE

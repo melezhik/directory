@@ -25,18 +25,21 @@ if test "${mode}"; then
   chmod $mode $path
 fi
 
-echo -n 'directory path: '
-stat -c %n -- $path
+if ! test $os = "minoca"; then
 
-echo -n 'directory owner: '
-stat -c '<'%U'>' -- $path
-
-echo -n 'directory group: '
-stat -c '<'%G'>' -- $path
-
-echo -n 'directory access rights: '
-stat -c %A -- $path
-
+  echo -n 'directory path: '
+  stat -c %n -- $path
+  
+  echo -n 'directory owner: '
+  stat -c '<'%U'>' -- $path
+  
+  echo -n 'directory group: '
+  stat -c '<'%G'>' -- $path
+  
+  echo -n 'directory access rights: '
+  stat -c %A -- $path
+  
+fi
 
 
 
