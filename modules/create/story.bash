@@ -18,7 +18,7 @@ if test "${owner}"; then
 fi
 
 if test "${group}"; then
-  chgrp $owner -R $path
+  chown :$group -R $path
 fi
 
 if test "${mode}"; then
