@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Manages directories
+Sparrow plugin to manages directories.
 
 
 # INSTALL
@@ -15,7 +15,7 @@ Manages directories
     $ cat sparrowfile
 
 
-    task_run %(
+    task-run %(
 
       task => 'create this directory',
       plugin => 'directory',

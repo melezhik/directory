@@ -5,7 +5,7 @@ generator: <<CODE
 owner=$(config owner)
 group=$(config group)
 
-if ! test $os == "minoca"; then
+if ! test $os = "minoca" && ! test $os = "darwin"; then
 
   if test "${owner}"; then
     echo 'owner: <'$(config owner)'>' 

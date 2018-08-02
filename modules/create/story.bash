@@ -25,7 +25,7 @@ if test "${mode}"; then
   chmod $mode $path
 fi
 
-if ! test $os = "minoca"; then
+if ! test $os = "minoca" && ! test $os = "darwin"; then
 
   echo -n 'directory path: '
   stat -c %n -- $path

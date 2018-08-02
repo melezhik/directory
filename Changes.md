@@ -1,3 +1,7 @@
+# 0.1.6
+
+* Darwin OS support
+
 # 0.1.5
 
 * Fix chgrp bug
