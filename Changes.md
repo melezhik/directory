@@ -1,3 +1,7 @@
+# 0.2.*
+
+* windows system support
+
 # 0.1.6
 
 * Darwin OS support
